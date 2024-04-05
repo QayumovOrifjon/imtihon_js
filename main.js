@@ -121,3 +121,29 @@ icon.forEach((products)=>{
         shopping.innerText = sum
     })
 })
+
+
+// <!-- Ko'rsatilgan HTML kodi ustiga quyidagi JavaScriptni qo'shing -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const openMenuButton = document.querySelector('.openMenu');
+    const closeMenuButton = document.querySelector('.closeMenu');
+    const menu = document.querySelector('.center__list');
+
+    // Menyuni ochish uchun funktsiya
+    function openMenu() {
+      menu.classList.add('active');
+    }
+
+    // Menyuni yopish uchun funktsiya
+    function closeMenu() {
+      menu.classList.remove('active');
+    }
+
+    // Menyu ochish tugmasi uchun qo'llanuvchi hodisa
+    openMenuButton.addEventListener('click', openMenu);
+    
+    // Menyu yopish tugmasi uchun qo'llanuvchi hodisa
+    closeMenuButton.addEventListener('click', closeMenu);
+  });
+
