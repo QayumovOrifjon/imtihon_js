@@ -64,6 +64,7 @@
         letter-spacing: 0%;
         text-align: center;
         text-transform: uppercase;
+        transition: all 0.1s;
       }
       .list__item:hover {
         color: rgb(90, 90, 201);
@@ -74,6 +75,7 @@
         letter-spacing: 0%;
         text-align: center;
         text-transform: uppercase;
+     
       }
     }
   }
@@ -83,26 +85,26 @@
     display: flex;
     gap: 25px;
 
-    .favoruit {
+    .like {
       position: absolute;
+      top: -10px;
+      right: 43px;
       display: block;
       width: 20px;
       height: 20px;
       border-radius: 50px;
       background-color: #5463d0;
-      right: -10px;
-      top: -10px;
     }
 
     .shop {
       position: absolute;
+      top: -10px;
+      left: 165px;
       display: block;
       width: 20px;
       height: 20px;
       border-radius: 50px;
       background-color: #5463d0;
-      top: -10px;
-      left: 115px;
     }
   }
 }
@@ -121,7 +123,7 @@ select {
   margin: 0 auto;
   overflow: hidden;
 
-  .carsl__text {
+  .carl__text {
     position: absolute;
     top: 35%;
     left: 212px;
@@ -132,7 +134,7 @@ select {
     line-height: 34.3px;
     text-transform: uppercase;
   }
-  .carsl__title {
+  .carl__title {
     position: absolute;
     top: 40%;
     left: 212px;
@@ -143,7 +145,7 @@ select {
     line-height: 62.5px;
     text-transform: capitalize;
   }
-  .carsl__btn {
+  .carl__btn {
     position: absolute;
     top: 57%;
     left: 212px;
@@ -151,7 +153,7 @@ select {
     padding: 5px 8px;
     border: none;
   }
-  .carsl__btn:hover {
+  .carl__btn:hover {
     box-sizing: border-box;
     border: 1px solid rgb(17, 17, 17);
   }
@@ -537,7 +539,7 @@ select {
   }
 }
 
-.our__lasets {
+.Fashion {
   h1 {
     text-align: center;
     color: rgb(17, 17, 17);
@@ -763,13 +765,13 @@ input:focus {
 // media////////////////
 
 @media (max-width: 653px) {
-  .carsl__text {
+  .carl__text {
     display: none;
   }
-  .carsl__title {
+  .carl__title {
     display: none;
   }
-  .carsl__btn {
+  .carl__btn {
     display: none;
   }
   .image {
@@ -808,7 +810,7 @@ input:focus {
     display: block;
   }
 
-  .our__lasets {
+  .Fashion {
     .latest__blogs {
       grid-template-columns: repeat(1, 1fr);
       justify-items: center;
@@ -857,13 +859,13 @@ input:focus {
 // media
 
 @media (max-width: 830px) {
-  .carsl__text {
+  .carl__text {
     display: none;
   }
-  .carsl__title {
+  .carl__title {
     display: none;
   }
-  .carsl__btn {
+  .carl__btn {
     display: none;
   }
   .reg {
@@ -897,7 +899,7 @@ input:focus {
   .latest__blogs {
     display: block;
   }
-  .our__lasets {
+  .Fashion {
     .latest__blogs {
       grid-template-columns: repeat(2, 1fr);
       justify-items: center;
@@ -944,13 +946,13 @@ input:focus {
 }
 // media///////
 @media (max-width: 1140px) {
-  .carsl__text {
+  .carl__text {
     display: none;
   }
-  .carsl__title {
+  .carl__title {
     display: none;
   }
-  .carsl__btn {
+  .carl__btn {
     display: none;
   }
   .reg {
@@ -986,7 +988,7 @@ input:focus {
   .latest__blogs {
     display: block;
   }
-  .our__lasets {
+  .Fashion {
     .latest__blogs {
       grid-template-columns: repeat(2, 1fr);
       justify-items: center;
@@ -1031,10 +1033,8 @@ input:focus {
     }
   }
 }
-
-// mediadavomi
-
-#checkbtn {
+/*media =>*/
+label #btn, label #cancel{
   line-height: 80px;
   margin-right: 10px;
   font-size: 30px;
@@ -1044,43 +1044,61 @@ input:focus {
   display: none;
 }
 #check:checked ~ .header__inner {
-  .header__cen {
+
     .center__list {
       left: 0;
     }
-  }
+  
 }
 
-@media (max-width: 895px) {
-  #checkbtn {
+@media (max-width: 830px) {
+  .header__right {
+      .like {
+      position: absolute;
+    left: 115px;
+     
+    }}
+  .nav{
+    display: none;
+  }
+ label #btn {
     display: block;
   }
+  
   .header__inner {
-    .header__cen {
+    display: flex;
+    justify-content: space-between;
+    .header__cen{ 
+      text-align: center;
       .center__list {
-        display: block;
-        text-align: start;
-        width: 70%;
-        height: 600px;
-        background: #5a5ac9;
-        position: fixed;
-        top: 160px;
-      }
-    }
-  }
+       position: fixed;
+       top: 116px;
+       width: 100%;
+       height: 100vh;
+       background: #34495e;
+
+      }}}
+    
+  
   .header__inner {
-    .header__cen {
+   .header__cen{
       .center__list {
+        display: none;
         li {
           display: block;
           text-align: center;
-          margin-top: 50px;
+          margin-top: 40px;
+          padding: 15px;
 
           .list__item {
             color: white;
+            font-size:large;
+            transition: all 0.1s;
+          }
+            
           }
         }
-      }
+      
     }
   }
 }

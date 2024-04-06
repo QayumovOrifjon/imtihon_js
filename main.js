@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const dotContainer = document.querySelector(".carousel-dots");
   let currentIndex = 0;
   const slideWidth = slides[0].clientWidth;
-  const intervalTime = 4000; // Interval vaqtini o'zgartiring (4 sekund = 4000 millisekund)
+  const intervalTime = 4000; 
 
   slides.forEach((slide, index) => {
     slide.style.left = slideWidth * index + "px";
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateDots();
 
-  // Avtomatik ravishda aylantirish
+  /*ozi yur*/
   setInterval(nextSlide, intervalTime);
 });
 
@@ -116,27 +116,12 @@ icon.forEach((products) => {
     sum = sum + 1;
     shopping.innerText = sum;
   });
-}) <
-  // <!-- Ko'rsatilgan HTML kodi ustiga quyidagi JavaScriptni qo'shing -->
-  script >
-  document.addEventListener("DOMContentLoaded", function () {
-    const openMenuButton = document.querySelector(".openMenu");
-    const closeMenuButton = document.querySelector(".closeMenu");
-    const menu = document.querySelector(".center__list");
+}) 
 
-    // Menyuni ochish uchun funktsiya
-    function openMenu() {
-      menu.classList.add("active");
-    }
+// menu ni open close
+const btn = document.getElementById('btn');
+const centerList = document.querySelector('.center__list');
 
-    // Menyuni yopish uchun funktsiya
-    function closeMenu() {
-      menu.classList.remove("active");
-    }
-
-    // Menyu ochish tugmasi uchun qo'llanuvchi hodisa
-    openMenuButton.addEventListener("click", openMenu);
-
-    // Menyu yopish tugmasi uchun qo'llanuvchi hodisa
-    closeMenuButton.addEventListener("click", closeMenu);
-  });
+btn.addEventListener('click', () => {
+  centerList.style.display === 'none' ? centerList.style.display = 'block' : centerList.style.display = 'none';
+});
