@@ -56,14 +56,20 @@ document.addEventListener("DOMContentLoaded", function () {
   /*ozi yur*/
   setInterval(nextSlide, intervalTime);
 });
-
+/////////
 const productsList = document.querySelector("#new_product");
 
 const fetchData = () => {
   fetch("https://fakestoreapi.com/products")
     .then((response) => response.json())
     .then((products) => {
-      products.slice(0, 4).forEach((product) => {
+        filteredProducts=products;
+     renderData(products)
+    });
+};
+
+const renderData = (data)=>{
+    data.slice(0, 4).forEach((product) => {
         // console.log(product);
         const card = document.createElement("div");
         const cardImage = document.createElement("img");
@@ -93,9 +99,10 @@ const fetchData = () => {
 
         productsList.appendChild(card);
       });
-    });
-};
-fetchData();
+}
+
+
+// Search open close
 
 const search = document.querySelector(".search");
 const label = document.querySelector(".label");
@@ -125,3 +132,19 @@ const centerList = document.querySelector('.center__list');
 btn.addEventListener('click', () => {
   centerList.style.display === 'none' ? centerList.style.display = 'block' : centerList.style.display = 'none';
 });
+
+/*search*/
+
+const searchInput = document.getElementById("searchInput");
+let filteredProducts = [];
+
+
+const productFun = (e)=>{
+    const inputVal = e.target.value.toLowerCase();
+    const filteredData = filteredProducts.filter((item)=>item.title.toLowerCase().includes(inputVal));
+    console.log(filteredData);
+    renderData(filteredData);
+};
+
+searchInput.addEventListener("input", productFun);
+fetchData();
